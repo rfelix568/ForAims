@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMOLE</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 20px 0;
+        }
+
+        header .head1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        header .head2 {
+            font-size: 17px;
+            margin: 5px 0 20px;
+        }
+
+        /* Navigation (Tabs) */
+        .tab-menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+        }
+
+        .tab-menu button {
+            background-color: #e753d8;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab-menu button:hover {
+            background-color: #e753d8;
+        }
+
+        /* Tab content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1 class="head1">Für Mia</h1>
+    </header>
+
+    <!-- Tab Navigation Bar -->
+    <div class="tab-menu">
+        <button onclick="openTab('home')">HOME</button>
+        <button onclick="openTab('news')">KONTAKT</button>
+        <button onclick="openTab('notifications')">AUTOR</button>
+        
+    </div>
+
+    <!-- Body Section -->
+    <main>
+        <!-- Home Tab Content -->
+        <div id="home" class="tab-content active">
+            <p class="head2">whats cookin good lookin</p>
+            <img src="https://i.pinimg.com/originals/5a/8d/70/5a8d70ce78bd7e2f015f9e6bfe36363e.png" alt="brainrot" style="width:100%;max-width:600px;">
+        </div>
+
+        <!-- News Tab Content -->
+        <div id="news" class="tab-content">
+            <h2>Hier kannst du mich kontaktieren!</h2>
+            <p>E-Mail: felix.luis.rausch@gmail.com</p>
+            <br>
+            <p>Telefon: 0170 280 3500</p>
+            <br>
+            <p>soziale Medien: r.felix568</p>
+        </div>
+
+        <!-- Notifications Tab Content -->
+        <div id="notifications" class="tab-content">
+            <h2>ÜBER MICH</h2>
+            <p>ich hab zu viel zeit und hab html gelernt also kriegst du deine eigene website</p>
+        </div>
+        <div id="impressum" class="tab-content">
+            <p>All Rights reserved an mich und Herr Wagner den Kelb, weil er mich auf die Idee gebracht hat</p>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <button onclick="openTab('impressum')">IMPRESSUM</button>
+    </footer>
+
+    <!-- JavaScript zum Wechseln der Tabs -->
+    <script>
+        function openTab(tabName) {
+            // Alle Tab-Inhalte verstecken
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Den ausgewählten Tab anzeigen
+            document.getElementById(tabName).classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
